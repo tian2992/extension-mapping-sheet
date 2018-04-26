@@ -8,13 +8,11 @@ import copy
 
 core_schema_path = sys.argv[1]
 
-extension_registry_path = sys.argv[2]
-
 with open(core_schema_path) as core_schema_file:
 	core_schema = json.load(core_schema_file, object_pairs_hook=OrderedDict)
 
-with open(extension_registry_path) as extension_registry_file:
-	extension_registry = json.load(extension_registry_file)
+with urllib.request.urlopen("http://standard.open-contracting.org/extension_registry/master/extensions.json") as url:
+	extension_registry = json.loads(url.read().decode())
 
 for extension in extension_registry["extensions"]:
 	core_schema_copy = copy.deepcopy(core_schema)

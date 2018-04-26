@@ -11,7 +11,7 @@ source .ve/bin/activate
 cat release-schema.json | ocdskit mapping-sheet > release-schema-flat.csv
 
 #fetch extension schemas and create patched versions of core schema
-python3 fetch_extension_schemas.py release-schema.json ../extension_registry/extensions.json
+python3 fetch_extension_schemas.py release-schema.json
 
 #flatten patched schemas
 for file in extension_schemas/*
