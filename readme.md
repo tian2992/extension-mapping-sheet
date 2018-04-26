@@ -1,14 +1,29 @@
-required:
+## Install
 
-curl
+install curl:
 
-install ocdskit from source (https://github.com/open-contracting/ocdskit/commit/c1cd50ab16593f10afe1149bedd86e896643d537)
+> apt-get install curl
 
+set up virtual environment:
 
-## Installation
+> python3 -m venv .ve
 
-python3 -m venv .ve
+activate virtual environment:
 
-source .ve/bin/activate
+> source .ve/bin/activate
 
-pip install <ocdskit location>
+install ocdskit from source (in order to get [this commit](https://github.com/open-contracting/ocdskit/commit/c1cd50ab16593f10afe1149bedd86e896643d537)):
+
+> pip install https://github.com/open-contracting/ocdskit/archive/master.zip
+
+install requirements:
+
+> pip install -r requirements.txt
+
+## Run
+
+> bash extension-mapping-sheet.bash
+
+results in:
+
+> extension-mapping-sheet.csv
